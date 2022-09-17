@@ -1,1 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
 
+spring:
+  # todo ?? ??? ??? ??
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name:org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true  # print sql in console
+    properties:
+      hibernate:
+        format_sql: true  # print sql pretty
+        default_batch_fetch_size: 500 # one to many performance optimization (??? ??? ?? ? ?? ???)
+    open-in-view: false   # ??? ???? ?? ??? ???? ??? ??
+
+  servlet:
+    multipart:
+      max-file-size: 10MB       # one file size limit
+      max-request-size: 100MB   # all file size limit
+
+logging:
+  level:
+    org.hibernate.type: trace # console log level

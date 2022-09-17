@@ -1,0 +1,5 @@
+# 각 설정값들을 아래와 같이 오버라이딩 할수 있다
+#server:
+#  port: 8080
+#  servlet:
+#    context-path: /dev
