@@ -29,3 +29,11 @@ spring:
 logging:
   level:
     org.hibernate.type: trace # console log level
+    template: debug   # todo 패키지 수정
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000

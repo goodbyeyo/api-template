@@ -20,6 +20,11 @@ public class HealthCheckController {
 
     @GetMapping("/health")
     public ResponseEntity<HealthCheckResponseDto> healthCheck() {
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return ResponseEntity.ok(HealthCheckResponseDto.builder()
                 .health(HttpStatus.OK.getReasonPhrase())
                 .activeProfiles(List.of(environment.getActiveProfiles()))

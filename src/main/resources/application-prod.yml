@@ -1,2 +1,13 @@
 spring:
-# todo 운영 데이터베이스 연결 
+# todo 운영 데이터베이스 연결
+
+logging:
+  level:
+    template: info   # todo 패키지 수정
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
