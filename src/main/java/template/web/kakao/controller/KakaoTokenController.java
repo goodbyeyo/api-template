@@ -24,7 +24,7 @@ public class KakaoTokenController {
     private static final String grantType = "authorization_code";
 
     @Value("${kakao.client.redirectUrl")
-    private final String redirectUrl;
+    private String redirectUrl;
 
     @GetMapping("/login")
     public String login() {
