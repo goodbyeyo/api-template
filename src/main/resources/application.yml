@@ -46,5 +46,5 @@ kakao:
 
 token:
   secret: e75mFITZWDJlwN230Ow0A
-  access-token-expiration-time: 900000 # 15 minutes : 1000(ms) x 60(s) x 15(m)
+  access-token-expiration-time: 1 # 15 minutes : 1000(ms) x 60(s) x 15(m)
   refresh-token-expiration-time: 1209600000 # 2 weeks : 1000(ms) x 60(s) x 24(h) x 14(d)
