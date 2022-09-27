@@ -17,7 +17,7 @@ public class OauthLoginController {
     private final OauthValidator oauthValidator;
     private final OauthLoginService oauthLoginService;
 
-    @PostMapping("/login/")
+    @PostMapping("/login")
     public ResponseEntity<OauthLoginDto.Response> oauthLogin(@RequestBody OauthLoginDto.Request request,
                                                              HttpServletRequest httpServletRequest) {
         String authorizationHeader = httpServletRequest.getHeader("Authorization");

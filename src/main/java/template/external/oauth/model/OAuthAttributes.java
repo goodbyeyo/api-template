@@ -20,6 +20,7 @@ public class OAuthAttributes {
         return Member.builder()
                 .memberName(name)
                 .email(email)
+                .memberType(memberType)
                 .profile(profile)
                 .role(role)
                 .build();

@@ -14,16 +14,16 @@ public class KakaoTokenController {
 
     private final KakaoTokenClient kakaoTokenClient;
 
-    @Value("${kakao.client.id")
+    @Value("${kakao.client.id}")
     private String clientId;
 
-    @Value("${kakao.client.secret")
+    @Value("${kakao.client.secret}")
     private String clientSecret;
 
     private static final String contentType = "application/x-www-form-urlencoded;charset=utf-8";
     private static final String grantType = "authorization_code";
 
-    @Value("${kakao.client.redirectUrl")
+    @Value("${kakao.client.redirectUrl}")
     private String redirectUrl;
 
     @GetMapping("/login")

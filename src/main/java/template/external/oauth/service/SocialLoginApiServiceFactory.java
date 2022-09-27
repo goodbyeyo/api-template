@@ -1,8 +1,7 @@
-package template.external.oauth.kakao.service;
+package template.external.oauth.service;
 
 import org.springframework.stereotype.Service;
 import template.domain.member.constant.MemberType;
-import template.external.oauth.service.SocialLoginApiService;
 
 import java.util.Map;
 
@@ -17,8 +16,9 @@ public class SocialLoginApiServiceFactory {
 
     public static SocialLoginApiService getSocialLoginApiServices(MemberType memberType) {
         String socialLoginApiServiceBeanName = "";
+
         if (MemberType.KAKAO.equals(memberType)) {
-            socialLoginApiServiceBeanName = "kakaoLoginApiServiceImpl";
+            socialLoginApiServiceBeanName = "kaKaoLoginApiServiceImpl";
         }
         return socialLoginApiServices.get(socialLoginApiServiceBeanName);
     }

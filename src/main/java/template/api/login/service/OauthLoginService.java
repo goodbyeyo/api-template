@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import template.api.login.dto.OauthLoginDto;
 import template.domain.member.constant.MemberType;
-import template.external.oauth.kakao.service.SocialLoginApiServiceFactory;
+import template.external.oauth.service.SocialLoginApiServiceFactory;
 import template.external.oauth.model.OAuthAttributes;
 import template.external.oauth.service.SocialLoginApiService;
 
