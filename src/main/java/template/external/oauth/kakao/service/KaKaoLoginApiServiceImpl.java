@@ -27,7 +27,7 @@ public class KaKaoLoginApiServiceImpl implements SocialLoginApiService {
                 GrantType.BEARER.getType() + " " + accessToken);
         KaKaoUserInfoResponseDto.KaKaoAccount kaKaoAccount = kaKaoUserInfo.getKaKaoAccount();
         String email = kaKaoAccount.getEmail();
-
+        log.info("Email = {} " + email);
         return OAuthAttributes.builder()
                 .email(StringUtils.hasText(email) ? email : kaKaoUserInfo.getId())
                 .name(kaKaoAccount.getProfile().getNickname())
