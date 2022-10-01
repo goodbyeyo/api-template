@@ -12,7 +12,8 @@ public enum ErrorCode {
     NOT_VALID_TOKEN(HttpStatus.UNAUTHORIZED, "A002","token is invalid"),
     NOT_EXIST_AUTHORIZATION(HttpStatus.UNAUTHORIZED, "A003", "Authorization Header is empty"),
     NOT_VALID_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "A004", "valid type is not bearer type"),
-    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M001", "Invalid Member Type(member type : KaKaO");
+    INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M001", "Invalid Member Type(member type : KaKaO"),
+    ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "M002", "memberId is already registered");
     private HttpStatus httpStatus;
     private String errorCode;
     private String message;

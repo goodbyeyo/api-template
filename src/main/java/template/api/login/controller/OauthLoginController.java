@@ -24,8 +24,9 @@ public class OauthLoginController {
         oauthValidator.validateAuthorization(authorizationHeader);
         oauthValidator.validateMemberType(authorizationHeader);
         String accessToken = authorizationHeader.split(" ")[1];
-        OauthLoginDto.Response response = oauthLoginService.oauthLogin(accessToken, MemberType.from(request.getMemberType()));
-        return ResponseEntity.ok(response);
+        OauthLoginDto.Response jwtTokenResponseDto =
+                oauthLoginService.oauthLogin(accessToken, MemberType.from(request.getMemberType()));
+        return ResponseEntity.ok(jwtTokenResponseDto);
     }
 
 }

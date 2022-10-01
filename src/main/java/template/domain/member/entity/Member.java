@@ -7,9 +7,12 @@ import lombok.NoArgsConstructor;
 import template.domain.common.BaseEntity;
 import template.domain.member.constant.MemberType;
 import template.domain.member.constant.Role;
+import template.global.jwt.dto.JwtTokenDto;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
+import static template.global.util.DateTimeUtils.convertToLocalDateTime;
 
 @Entity
 @Getter
@@ -58,5 +61,11 @@ public class Member extends BaseEntity {
         this.memberName = memberName;
         this.profile = profile;
         this.role = role;
+    }
+
+    public void updateRefreshToken(JwtTokenDto jwtTokenDto) {
+        this.refreshToken = jwtTokenDto.getRefreshToken();
+        // date -> localDateTime
+        this.tokenExpirationTime = convertToLocalDateTime(jwtTokenDto.getRefreshTokenExpireTime());
     }
 }
