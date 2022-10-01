@@ -40,11 +40,14 @@ feign:
 
 kakao:
   client:
-    id: 722e99b7d8f989054a0bd9152d87d6bf
-    secret: e75mFITZWDJlwN230Ow0AANue6z1eGCR
+    id: ENC(t5yjO+wcIlB8aurDABqkIo8UpGbdrEAbxHJD5yFNBjfigv4NAyyJJzoqRn/paoXp) # 722e99b7d8f989054a0bd9152d87d6bf
+    secret: ENC(rOAovf3H1Lk6m/tn6Util9TV+1Pm1oE9Yk05SPok10qo+5scY6P1BL2ZYXPzhq+q) # e75mFITZWDJlwN230Ow0AANue6z1eGCR
     redirectUrl : http://localhost:8080/oauth/kakao/callback
 
 token:
-  secret: e75mFITZWDJlwN230Ow0A
+  secret: ENC(s0sxjY3QwbJR9J37fLVvlKER/QkFDYOSsIqUIsCxq18=) # e75mFITZWDJlwN230Ow0A
   access-token-expiration-time: 900000 # 15 minutes : 1000(ms) x 60(s) x 15(m)
   refresh-token-expiration-time: 1209600000 # 2 weeks : 1000(ms) x 60(s) x 24(h) x 14(d)
+
+jasypt:
+  password: ${PASSWORD}
