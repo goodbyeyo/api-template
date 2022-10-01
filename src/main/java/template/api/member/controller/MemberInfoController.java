@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import template.api.member.dto.MemberInfoResponseDto;
 import template.api.member.service.MemberInfoService;
 import template.global.jwt.service.TokenManager;
+import template.global.resolver.memberinfo.MemberInfo;
+import template.global.resolver.memberinfo.MemberInfoDto;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,11 +22,13 @@ public class MemberInfoController {
     private final TokenManager tokenManager;
 
     @GetMapping("/info")
-    public ResponseEntity<MemberInfoResponseDto> getMemberInfo(@RequestHeader("Authorization")
-                                                                   String authorizationHeader){
-        String accessToekn = authorizationHeader.split(" ")[1];
-        Claims tokenClaims = tokenManager.getTokenClaims(accessToekn);
-        Long memberId = Long.valueOf((Integer) tokenClaims.get("memberId"));
+    public ResponseEntity<MemberInfoResponseDto> getMemberInfo(
+//            @RequestHeader("Authorization") String authorizationHeader){
+            @MemberInfo MemberInfoDto memberInfoDto){
+//        String accessToken  = authorizationHeader.split(" ")[1];
+//        Claims tokenClaims = tokenManager.getTokenClaims(accessToken);
+//        Long memberId = Long.valueOf((Integer) tokenClaims.get("memberId"));
+        Long memberId = memberInfoDto.getMemberId();
         MemberInfoResponseDto memberInfoResponseDto = memberInfoService.getMemberInfo(memberId);
         return ResponseEntity.ok(memberInfoResponseDto);
 
