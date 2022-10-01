@@ -29,7 +29,7 @@ public class LogoutService {
         Claims tokenClaims = tokenManager.getTokenClaims(accessToken);
         String tokenType = tokenClaims.getSubject();
         if (!TokenType.isAccessToken(tokenType)) {
-            throw new AuthenticationException(ErrorCode.NOT_ACCESS_TOKEN);
+            throw new AuthenticationException(ErrorCode.NOT_ACCESS_TOKEN_TYPE);
         }
 
         // 3. refresh token 만료 처리

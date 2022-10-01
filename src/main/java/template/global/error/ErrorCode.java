@@ -16,7 +16,7 @@ public enum ErrorCode {
     NOT_VALID_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "A004", "valid type is not bearer type"),
     REFRESH_TOKEN_NOT_FOUND(HttpStatus.UNAUTHORIZED,"A005", "this refresh token is not exist"),
     REFRESH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED,"A006", "this refresh token is expired"),
-    NOT_ACCESS_TOKEN(HttpStatus.UNAUTHORIZED, "A007", "this token is not accessible"),
+    NOT_ACCESS_TOKEN_TYPE(HttpStatus.UNAUTHORIZED, "A007", "this is not access token type"),
 
     // 회원
     INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "M001", "Invalid Member Type(member type : KaKaO"),
