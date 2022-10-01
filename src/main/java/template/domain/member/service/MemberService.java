@@ -8,6 +8,7 @@ import template.domain.member.repository.MemberRespository;
 import template.global.error.ErrorCode;
 import template.global.error.exception.AuthenticationException;
 import template.global.error.exception.BusinessException;
+import template.global.error.exception.EntityNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -45,5 +46,10 @@ public class MemberService {
             throw new AuthenticationException(ErrorCode.REFRESH_TOKEN_EXPIRED);
         }
         return member;
+    }
+
+    public Member findMemberByMemberId(Long memberId) {
+        return memberRepository.findById(memberId)
+                .orElseThrow(()-> new EntityNotFoundException(ErrorCode.MEMBER_NOT_EXIST));
     }
 }
