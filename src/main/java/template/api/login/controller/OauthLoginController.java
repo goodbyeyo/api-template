@@ -7,6 +7,7 @@ import template.api.login.dto.OauthLoginDto;
 import template.api.login.service.OauthLoginService;
 import template.api.login.validator.OauthValidator;
 import template.domain.member.constant.MemberType;
+import template.global.util.AuthorizationHeaderUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,7 +22,7 @@ public class OauthLoginController {
     public ResponseEntity<OauthLoginDto.Response> oauthLogin(@RequestBody OauthLoginDto.Request request,
                                                              HttpServletRequest httpServletRequest) {
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
-        oauthValidator.validateAuthorization(authorizationHeader);
+        AuthorizationHeaderUtils.validateAuthorization(authorizationHeader);
         oauthValidator.validateMemberType(authorizationHeader);
         String accessToken = authorizationHeader.split(" ")[1];
         OauthLoginDto.Response jwtTokenResponseDto =
