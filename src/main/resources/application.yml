@@ -26,6 +26,10 @@ spring:
       max-file-size: 10MB       # one file size limit
       max-request-size: 100MB   # all file size limit
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 logging:
   level:
     org.hibernate.type: trace # console log level
