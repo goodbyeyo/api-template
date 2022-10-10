@@ -23,7 +23,7 @@ public class TokenController {
 
     @Tag(name = "authentication")
     @Operation(summary = "Access Token 재발급 API", description = "Access Token 재발급 API")
-    @PostMapping("/access-token/issue")
+    @PostMapping("/access-token/issues")
     public ResponseEntity<AccessTokenResponseDto> createAccessToken(HttpServletRequest httpServletRequest) {
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
         AuthorizationHeaderUtils.validateAuthorization(authorizationHeader);

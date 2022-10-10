@@ -30,6 +30,7 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
     implementation 'com.navercorp.lucy:lucy-xss-servlet:2.0.1'
+    implementation 'org.apache.commons:commons-text:1.8'    // useing StringEscapeUtils
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'junit:junit:4.13.1'
